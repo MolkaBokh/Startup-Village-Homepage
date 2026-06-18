@@ -11,6 +11,11 @@
   --ink: #1E2A4A;
   --text-muted: #5B6478;
 
+  --logo-blue: #36A9E1;
+  --logo-yellow: #F5B325;
+  --logo-pink: #E91E79;
+  --logo-green: #7AC143;
+
   --font-display: 'Baloo 2', sans-serif;
   --font-body: 'Inter', sans-serif;
 
@@ -152,11 +157,16 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 30% 30%;
 }
 .hero-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(22,30,54,0.25) 0%, rgba(22,30,54,0.55) 65%, rgba(22,30,54,0.8) 100%);
+  background: linear-gradient(180deg, rgba(22,30,54,0.35) 0%, rgba(22,30,54,0.5) 45%, rgba(22,30,54,0.82) 100%);
+}
+
+@media (max-width: 860px) {
+  .hero-media img { object-position: 18% 18%; }
 }
 .hero-content {
   position: relative;
@@ -284,17 +294,19 @@ h1, h2, h3, h4 {
   font-size: 1.05rem;
   color: var(--white);
   margin-bottom: 10px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
 .univers-body p {
   font-size: 0.9rem;
   line-height: 1.55;
   margin: 0;
-  color: rgba(255,255,255,0.92);
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
-.accent-blue .univers-body { background: var(--blue); }
-.accent-green .univers-body { background: var(--green); }
-.accent-pink .univers-body { background: var(--pink); }
-.accent-navy .univers-body { background: var(--navy); }
+.accent-blue .univers-body { background: var(--logo-blue); }
+.accent-yellow .univers-body { background: var(--logo-yellow); }
+.accent-pink .univers-body { background: var(--logo-pink); }
+.accent-green .univers-body { background: var(--logo-green); }
 
 /* ============ La vie au village (story blocks) ============ */
 .story-block {
@@ -419,8 +431,8 @@ h1, h2, h3, h4 {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.8fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
   padding-bottom: 48px;
 }
 .footer-col h3 {
@@ -500,8 +512,6 @@ h1, h2, h3, h4 {
 @media (max-width: 1024px) {
   .univers-grid { grid-template-columns: repeat(2, 1fr); }
   .events-grid { grid-template-columns: repeat(3, 1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid .footer-col:last-child { grid-column: 1 / -1; }
 }
 
 @media (max-width: 860px) {
