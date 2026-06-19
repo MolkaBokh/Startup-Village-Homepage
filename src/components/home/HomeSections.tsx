@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 
 const HP_IMG =
@@ -33,10 +32,10 @@ export function Hero() {
 }
 
 const UNIVERS = [
-  { title: "Coworking", img: "02-univers-coworking.png", accent: "bg-brand-blue" },
-  { title: "Bureaux privés", img: "03-univers-bureaux.png", accent: "bg-[#F5B325]" },
-  { title: "Salles d'événements", img: "04-univers-evenements.png", accent: "bg-brand-pink" },
-  { title: "Studio d'enregistrement", img: "05-univers-studio.png", accent: "bg-brand-green" },
+  { title: "Coworking", img: "02-coworking-cothinking-space.jpg", accent: "bg-brand-blue" },
+  { title: "Événements", img: "03-events-terrace-conference.png", accent: "bg-[#F5B325]" },
+  { title: "Studio & création de contenu", img: "04-studio-podcast-content-creation.png", accent: "bg-brand-pink" },
+  { title: "Salles de réunion & formation", img: "05-training-meeting-room.png", accent: "bg-brand-green" },
 ];
 
 export function UniversGrid() {
@@ -61,18 +60,18 @@ export function UniversGrid() {
 
 const STORIES = [
   {
-    img: "06-vie-cafeteria.png",
+    img: "06-village-figurines-hallway.png",
     title: "Un lieu de vie avant tout",
     text: "Au-delà du travail, Startup Village est un lieu où se créent des amitiés et des collaborations.",
   },
   {
-    img: "07-vie-detente.png",
+    img: "07-village-art-gallery.png",
     title: "Des espaces pensés pour se ressourcer",
     text: "Terrasses, salons et espaces verts pour souffler entre deux réunions.",
     reverse: true,
   },
   {
-    img: "08-vie-evenement.png",
+    img: "08-village-creative-workspace.jpg",
     title: "Une communauté vivante",
     text: "Ateliers, conférences et soirées régulières rythment la vie du village.",
   },
@@ -80,7 +79,7 @@ const STORIES = [
 
 export function StoryBlocks() {
   return (
-    <section id="espace-de-vie" className="mx-auto max-w-6xl space-y-16 px-6 py-20">
+    <section id="espace-de-vie-preview" className="mx-auto max-w-6xl space-y-16 px-6 py-20">
       {STORIES.map((story) => (
         <div
           key={story.title}
@@ -116,9 +115,9 @@ export function PartnersWall() {
 }
 
 const EVENTS = [
-  { img: "10-events-atelier.png", tag: "Atelier", title: "Création d'entreprise 101" },
+  { img: "10-events-main-conference.png", tag: "Conférence", title: "Tendances tech & innovation" },
   { img: "11-events-networking-reception.png", tag: "Networking", title: "Soirée réseau mensuelle" },
-  { img: "12-events-conference.png", tag: "Conférence", title: "Tendances tech & innovation" },
+  { img: "12-events-media-interview.png", tag: "Média", title: "Interviews & couverture presse" },
 ];
 
 export function EventsGrid() {
