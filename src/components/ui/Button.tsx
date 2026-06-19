@@ -1,17 +1,14 @@
 import Link from "next/link";
-import { ButtonHTMLAttributes, ReactNode } from "next/dist/server/route-modules/app-page/module.compiled" === undefined ? [] as never : ({} as never);
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 interface BaseProps {
-  children: ReactNodeLike;
+  children: ReactNode;
   variant?: "primary" | "outline";
   className?: string;
   href?: string;
 }
 
-type ReactNodeLike = React.ReactNode;
-
-type ButtonProps = BaseProps &
-  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children">;
+type ButtonProps = BaseProps & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children">;
 
 const VARIANTS: Record<string, string> = {
   primary: "bg-accent-500 text-white hover:bg-accent-600",
