@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff;
+  --foreground: #0a1733;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-baloo), var(--font-inter);
+
+  /* Contact / chrome palette (header, footer, contact) */
+  --color-navy-950: #0a1733;
+  --color-navy-900: #0d1c40;
+  --color-navy-800: #142854;
+  --color-primary-50: #eaf7fd;
+  --color-primary-100: #cdeefb;
+  --color-primary-400: #4cbcec;
+  --color-primary-500: #2aa7dd;
+  --color-primary-600: #1f8cc0;
+  --color-primary-700: #1a719c;
+  --color-accent-500: #e0245e;
+  --color-accent-600: #c01c4f;
+
+  /* Homepage brand palette (ported from original site CSS) */
+  --color-brand-navy: #1e2a4a;
+  --color-brand-navy-deep: #161e36;
+  --color-brand-blue: #29abe0;
+  --color-brand-blue-dark: #1c8fbe;
+  --color-brand-green: #74b843;
+  --color-brand-pink: #ec1e79;
+  --color-brand-cream: #f8f7f4;
+
+  /* Espace de vie palette, aliased onto the brand palette so existing
+     sv-* classes keep working and stay visually consistent site-wide */
+  --color-sv-green: #74b843;
+  --color-sv-blue: #29abe0;
+  --color-sv-magenta: #ec1e79;
+  --color-sv-navy: #1e2a4a;
+  --color-sv-grey: #5b6478;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
