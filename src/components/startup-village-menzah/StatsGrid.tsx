@@ -6,10 +6,10 @@ interface Stat {
 }
 
 const STATS: Stat[] = [
-  { count: "17", label: "bureaux privatifs", positions: "+120 positions", icon: "office" },
-  { count: "2", label: "espaces coworking", positions: "+90 positions", icon: "coworking" },
-  { count: "4", label: "salles de réunions", positions: "+40 positions", icon: "meeting" },
-  { count: "1", label: "salle polyvalente", positions: "+70 positions", icon: "hall" },
+  { count: "17", label: "Bureaux privatifs", positions: "+120 positions", icon: "office" },
+  { count: "2", label: "Espaces coworking", positions: "+90 positions", icon: "coworking" },
+  { count: "4", label: "Salles de réunions", positions: "+40 positions", icon: "meeting" },
+  { count: "1", label: "Salle polyvalente", positions: "+70 positions", icon: "hall" },
 ];
 
 function Icon({ name }: { name: Stat["icon"] }) {
@@ -17,31 +17,36 @@ function Icon({ name }: { name: Stat["icon"] }) {
   switch (name) {
     case "office":
       return (
-        <svg {...common} className="h-8 w-8">
-          <rect x="4" y="3" width="16" height="18" rx="1" />
-          <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" />
+        <svg {...common} className="h-9 w-9">
+          <path d="M7 10a5 5 0 0 1 10 0v2H7v-2Z" />
+          <path d="M5 12h14l-1.5 9h-11L5 12Z" />
+          <path d="M9 21v-3M15 21v-3" />
         </svg>
       );
     case "coworking":
       return (
-        <svg {...common} className="h-8 w-8">
-          <circle cx="8" cy="9" r="3" />
-          <circle cx="16" cy="10" r="2.5" />
-          <path d="M2 20c0-3 2.7-5 6-5s6 2 6 5M13 20c0-2 1.8-3.5 4.5-3.5S22 18 22 20" />
+        <svg {...common} className="h-9 w-9">
+          <rect x="3" y="4" width="18" height="12" rx="1.5" />
+          <path d="M8 20h8M12 16v4" />
         </svg>
       );
     case "meeting":
       return (
-        <svg {...common} className="h-8 w-8">
-          <rect x="3" y="5" width="18" height="14" rx="2" />
-          <path d="M3 10h18" />
+        <svg {...common} className="h-9 w-9">
+          <ellipse cx="12" cy="12" rx="8" ry="5" />
+          <circle cx="4" cy="10" r="1.4" />
+          <circle cx="20" cy="10" r="1.4" />
+          <circle cx="8" cy="17" r="1.4" />
+          <circle cx="16" cy="17" r="1.4" />
         </svg>
       );
     case "hall":
       return (
-        <svg {...common} className="h-8 w-8">
-          <path d="M4 20V10l8-6 8 6v10" />
-          <path d="M9 20v-6h6v6" />
+        <svg {...common} className="h-9 w-9">
+          <rect x="3" y="4" width="18" height="12" rx="1" />
+          <path d="M7 8h6M7 11h4" />
+          <circle cx="17" cy="17" r="2" />
+          <path d="M17 19v2" />
         </svg>
       );
   }
@@ -49,17 +54,21 @@ function Icon({ name }: { name: Stat["icon"] }) {
 
 export default function StatsGrid() {
   return (
-    <section className="bg-brand-cream px-6 py-16">
+    <section className="bg-white px-6 py-16">
       <h2 className="text-center font-display text-2xl font-extrabold text-sv-navy sm:text-3xl">
         Un espace stratégique pour des usages pratiques
       </h2>
+      <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-sv-grey">
+        Ici, tout a été pensé pour accompagner les pratiques professionnelles d&apos;aujourd&apos;hui :
+        hybrides, rapides et connectées.
+      </p>
       <div className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-10 sm:grid-cols-4">
         {STATS.map((stat) => (
           <div key={stat.label} className="flex flex-col items-center text-center">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-sv-blue/10 text-sv-blue">
+            <span className="flex h-14 w-14 items-center justify-center text-sv-navy">
               <Icon name={stat.icon} />
             </span>
-            <span className="mt-3 font-display text-3xl font-extrabold text-sv-navy">{stat.count}</span>
+            <span className="mt-3 font-display text-2xl font-extrabold text-sv-navy">{stat.count}</span>
             <span className="mt-1 text-sm font-semibold text-sv-navy">{stat.label}</span>
             <span className="mt-1 text-xs text-sv-grey">{stat.positions}</span>
           </div>

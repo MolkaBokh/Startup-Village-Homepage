@@ -8,20 +8,27 @@ interface IntroSectionProps {
 export default function IntroSection({ image, alt }: IntroSectionProps) {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
-      <div className="relative h-80 w-full overflow-hidden rounded-2xl sm:h-96">
-        <Image src={image} alt={alt} fill className="object-cover" />
-        <div className="absolute inset-0 bg-sv-navy/70" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white">
-          <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
-            Startup Village Menzah — Là où tout a commencé
+      <div className="grid overflow-hidden sm:grid-cols-2">
+        <div className="relative h-64 sm:h-auto">
+          <Image src={image} alt={alt} fill className="object-cover" />
+        </div>
+        <div className="flex flex-col justify-center bg-sv-navy px-8 py-10 text-white">
+          <h2 className="font-display text-xl font-extrabold sm:text-2xl">
+            Startup Village Menzah – Là où tout a commencé
           </h2>
-          <p className="mt-4 max-w-2xl text-white/90">
-            Ouvert le 20 novembre 2021, Startup Village Menzah occupe un bâtiment historique signé
-            Olivier Clément Cacoub, transformé en un lieu de co-création unique à Tunis.
+          <p className="mt-4 text-sm text-white/90">
+            Le 20 novembre 2021, Startup Village Menzah a ouvert ses portes, donnant naissance à un
+            écosystème d&apos;innovation et de co-création inédit en Tunisie. Niché dans un bâtiment
+            historique conçu par le célèbre architecte Olivier Clément Cacoub, cet espace unique a été
+            imaginé et transformé grâce à un travail collaboratif de 10 mois, réunissant villageois,
+            architectes et scénographes autour d&apos;un projet commun.
           </p>
-          <p className="mt-3 max-w-2xl text-white/90">
-            Pensé comme le berceau du concept, cet espace réunit startups, freelances, créateurs et
-            porteurs de projets autour d&apos;une même ambition : innover et grandir ensemble.
+          <p className="mt-3 text-sm text-white/90">
+            Plus qu&apos;un simple espace de coworking à Tunis, Startup Village Menzah est un lieu de vie
+            chaleureux, pensé pour favoriser l&apos;émergence d&apos;idées novatrices, le développement de
+            projets entrepreneuriaux et l&apos;épanouissement des talents tunisiens. Il offre un cadre
+            stimulant pour les startups, freelances, créateurs et porteurs de projets, alliant créativité,
+            convivialité et collaboration.
           </p>
         </div>
       </div>

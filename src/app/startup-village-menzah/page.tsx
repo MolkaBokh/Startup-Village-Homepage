@@ -6,7 +6,7 @@ import SpacesGrid from "@/components/startup-village-menzah/SpacesGrid";
 import PartnersSection from "@/components/startup-village-menzah/PartnersSection";
 import ExpertiseBlocks from "@/components/startup-village-menzah/ExpertiseBlocks";
 import MapBlock from "@/components/startup-village-menzah/MapBlock";
-import CTABanner from "@/components/espace-de-vie/CTABanner";
+import Button from "@/components/espace-de-vie/Button";
 
 export const metadata: Metadata = {
   title: "Startup Village Menzah",
@@ -47,11 +47,11 @@ export default function StartupVillageMenzahPage() {
 
       <ExpertiseBlocks />
 
-      <CTABanner
-        title="Je rejoins la communauté"
-        primaryCta={{ label: "Réserver un espace", href: "/contact" }}
-        tone="green"
-      />
+      <div className="flex justify-center px-6 pb-16">
+        <Button href="/contact" variant="green">
+          Je rejoins la communauté
+        </Button>
+      </div>
 
       <MapBlock />
     </>

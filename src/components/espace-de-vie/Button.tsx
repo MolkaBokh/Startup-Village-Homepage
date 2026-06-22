@@ -6,6 +6,7 @@ const VARIANTS: Record<string, string> = {
   secondary: "bg-white text-sv-navy hover:bg-white/90",
   ghost: "border border-white text-white hover:bg-white/10",
   green: "bg-sv-green text-white hover:bg-sv-green/90",
+  blue: "bg-sv-blue text-white hover:bg-sv-blue/90",
 };
 
 interface ButtonProps {
