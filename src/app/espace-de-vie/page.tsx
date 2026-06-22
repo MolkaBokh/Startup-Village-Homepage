@@ -11,8 +11,7 @@ export const metadata: Metadata = {
   title: "Espace de vie — Startup Village",
 };
 
-const EV_IMG =
-  "https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/1caf59a059be54dddc2c573041fe7445ff04737b/";
+const EV_IMG = "/images/";
 
 export default function EspaceDeViePage() {
   return (
