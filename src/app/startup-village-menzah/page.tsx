@@ -12,8 +12,24 @@ export const metadata: Metadata = {
   title: "Startup Village Menzah",
 };
 
-const SV_IMG = "https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/80c8cb94044eb19518426e72747aa91fddabf84a/";
+const SV_IMG = "https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/";
 const HP_IMG = `${SV_IMG}assets/images/`;
+const ORIGIN_STORY_IMG = `${SV_IMG}L%C3%A0%20o%C3%B9%20tout%20a%20commenc%C3%A9.jpg`;
+
+const SPACES_IMAGES = [
+  `${SV_IMG}1.jpg`,
+  `${SV_IMG}2.jpg`,
+  `${SV_IMG}3.png`,
+  `${SV_IMG}4.png`,
+  `${SV_IMG}5.jpg`,
+  `${SV_IMG}6.png`,
+  `${SV_IMG}7.jpg`,
+  `${SV_IMG}8.jpg`,
+  `${SV_IMG}9.jpg`,
+  `${SV_IMG}10.png`,
+];
+
+const PARTNER_LOGOS = Array.from({ length: 9 }, (_, i) => `${SV_IMG}logo-${i + 1}.png`);
 
 export default function StartupVillageMenzahPage() {
   return (
@@ -27,26 +43,19 @@ export default function StartupVillageMenzahPage() {
         secondaryCta={{ label: "Découvrir nos espaces", href: "#espaces" }}
       />
 
-      <IntroSection image={`${SV_IMG}Origin-Story.png`} alt="Startup Village Menzah - bâtiment historique" />
+      <IntroSection image={ORIGIN_STORY_IMG} alt="Startup Village Menzah - bâtiment historique" />
 
       <StatsGrid />
 
       <section id="espaces">
         <CraftGrid
           title="Découvrez nos espaces"
-          images={[
-            `${SV_IMG}Reunion-1.png`,
-            `${SV_IMG}Terrasse-1.png`,
-            `${SV_IMG}Studio-1.png`,
-            `${SV_IMG}Basket-Corridor.jpg`,
-            `${SV_IMG}Artisanat.jpg`,
-            `${SV_IMG}coin-detente-industriel.png`,
-          ]}
+          images={SPACES_IMAGES}
           caption="Bureaux, salles de réunion, terrasses et studio : un site pensé pour tous vos usages."
         />
       </section>
 
-      <PartnersSection image={`${HP_IMG}09-partners-logo-wall.png`} />
+      <PartnersSection logos={PARTNER_LOGOS} />
 
       <section className="mx-auto max-w-6xl px-6 py-20">
         <h2 className="text-center font-display text-2xl font-extrabold text-sv-navy sm:text-3xl">
