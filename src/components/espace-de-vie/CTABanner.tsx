@@ -9,12 +9,13 @@ interface CTABannerProps {
   title: string;
   primaryCta: CtaProps;
   secondaryCta?: CtaProps;
-  tone?: "magenta" | "navy";
+  tone?: "magenta" | "navy" | "green";
 }
 
 const BACKGROUNDS: Record<string, string> = {
   magenta: "bg-sv-magenta",
   navy: "bg-sv-navy",
+  green: "bg-sv-green",
 };
 
 export default function CTABanner({ title, primaryCta, secondaryCta, tone = "navy" }: CTABannerProps) {
