@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const EV_IMG =
-  "https://raw.githubusercontent.com/MolkaBokh/startup-village-espace-vie/4e88a37ba891749c9f05d1f02f3e740364ff36ec/public/images/";
+  "https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/1caf59a059be54dddc2c573041fe7445ff04737b/";
 
 export default function EspaceDeViePage() {
   return (
