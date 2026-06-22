@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
-  { label: "STARTUP VILLAGE", href: "/" },
+  { label: "STARTUP VILLAGE", href: "/startup-village-menzah" },
   { label: "CONCEPT", href: "/#nos-univers" },
   { label: "ESPACE DE VIE", href: "/espace-de-vie" },
   { label: "STARTUPS", href: "/#startups" },
