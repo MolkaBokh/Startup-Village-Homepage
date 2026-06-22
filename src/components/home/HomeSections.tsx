@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
-const HP_IMG = "/images/";
+const HP_IMG =
+  "https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/80c8cb94044eb19518426e72747aa91fddabf84a/assets/images/";
 
 export function Hero() {
   return (
