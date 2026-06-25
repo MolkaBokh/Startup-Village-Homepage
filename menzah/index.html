@@ -11,6 +11,7 @@
   <style>
     /* ============================================================
        Startup Village — Menzah
+       Design system shared with Startup Village Charguia
        Palette
          Navy   #0B2A4A
          Blue   #25AFE0
@@ -87,8 +88,8 @@
     .btn--blue   { background: var(--blue);   color: #fff; box-shadow: 0 14px 30px -12px rgba(37,175,224,.7); }
     .btn--yellow { background: var(--yellow); color: var(--navy); box-shadow: 0 14px 30px -12px rgba(245,179,57,.7); }
     .btn--green  { background: var(--green);  color: #fff; box-shadow: 0 14px 30px -12px rgba(119,180,87,.7); font-size: 17px; padding: 18px 40px; }
-    .btn--ghost  { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.7); }
-    .btn--ghost:hover { background: rgba(255,255,255,.12); }
+    .btn--ghost  { background: rgba(255,255,255,.10); color: #fff; border: 1.5px solid rgba(255,255,255,.75); }
+    .btn--ghost:hover { background: rgba(255,255,255,.18); }
 
     /* ===================== HEADER ===================== */
     .header {
@@ -214,10 +215,9 @@
     .marquee__track img { height: 52px; width: auto; object-fit: contain; }
     @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* ===================== JOIN / CTA ===================== */
-    .join { text-align: center; background: var(--soft); }
-    .join h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; }
-    .join p.lead { color: var(--muted); font-size: 18px; margin: 14px 0 40px; }
+    /* ===================== VILLAGEOIS / CTA ===================== */
+    .villageois { text-align: center; }
+    .villageois h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; margin-bottom: 36px; }
 
     /* ===================== MAP ===================== */
     .map { padding: 0 0 60px; }
@@ -271,8 +271,8 @@
       <nav class="menu">
         <a href="#" class="active">Startup Village</a>
         <a href="#concept">Concept</a>
-        <a href="#espaces">Espaces</a>
-        <a href="#poles">Pôles</a>
+        <a href="#espace-vie">Espace de vie</a>
+        <a href="#startups">Startups</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="lang">
@@ -291,7 +291,7 @@
       <p>Le lieu où innovation, médias et entrepreneuriat se rencontrent.</p>
       <div class="hero__cta">
         <a href="#contact" class="btn btn--blue">Réserver un espace</a>
-        <a href="#espaces" class="btn btn--ghost">Découvrir nos espaces</a>
+        <a href="#startups" class="btn btn--ghost">Découvrir nos espaces</a>
       </div>
     </div>
   </section>
@@ -310,7 +310,7 @@
   </section>
 
   <!-- ===================== STATS ===================== -->
-  <section class="section section--pt-tight" id="espaces">
+  <section class="section section--pt-tight" id="espace-vie">
     <div class="container">
       <div class="head-center">
         <h2>Un espace stratégique pour des usages pratiques</h2>
@@ -346,7 +346,7 @@
       <h2>DÉCOUVREZ NOS ESPACES</h2>
     </div>
   </div>
-  <section class="section section--tight">
+  <section class="section section--tight" id="startups">
     <div class="container">
       <div class="gallery">
         <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/1.jpg" alt="Espace 1" loading="lazy"></figure>
@@ -364,39 +364,7 @@
     </div>
   </section>
 
-  <!-- ===================== PÔLES D'EXPERTISE ===================== -->
-  <section class="section" id="poles">
-    <div class="container">
-      <div class="head-center">
-        <h2>Nos pôles d'expertise</h2>
-      </div>
-      <div class="poles">
-        <div class="pole pole--blue">
-          <div class="pole__media"><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/assets/images/02-coworking-cothinking-space.jpg" alt="Tech &amp; Digital" loading="lazy"></div>
-          <div class="pole__body">
-            <h3>Tech &amp; Digital</h3>
-            <p>Un écosystème dédié aux startups tech, au développement produit et à l'innovation digitale.</p>
-          </div>
-        </div>
-        <div class="pole pole--pink">
-          <div class="pole__media"><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/assets/images/04-studio-podcast-content-creation.png" alt="Media Lab" loading="lazy"></div>
-          <div class="pole__body">
-            <h3>Media Lab</h3>
-            <p>Studio et équipements pour la création de contenu, podcasts et productions vidéo.</p>
-          </div>
-        </div>
-        <div class="pole pole--green">
-          <div class="pole__media"><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/CoChef.png" alt="Food Lab" loading="lazy"></div>
-          <div class="pole__body">
-            <h3>Food Lab</h3>
-            <p>Un espace culinaire pensé pour la convivialité et les rencontres entre créatifs.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== LOGOS ===================== -->
+  <!-- ===================== LOGOS — ILS Y SONT DÉJÀ ===================== -->
   <section class="section section--tight logos-wrap">
     <div class="container logos">
       <div class="logos__title">
@@ -428,12 +396,35 @@
     </div>
   </section>
 
-  <!-- ===================== JOIN / CTA ===================== -->
-  <section class="section join" id="contact">
+  <!-- ===================== NOS PÔLES D'EXPERTISE ===================== -->
+  <section class="section">
     <div class="container">
-      <h2>Je rejoins la communauté</h2>
-      <p class="lead">Le lieu où innovation, médias et entrepreneuriat se rencontrent.</p>
-      <a href="#contact" class="btn btn--green">Réserver un espace</a>
+      <div class="head-center">
+        <h2>Nos pôles d'expertise</h2>
+      </div>
+      <div class="poles">
+        <div class="pole pole--blue">
+          <div class="pole__media"><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/assets/images/02-coworking-cothinking-space.jpg" alt="Tech &amp; Digital" loading="lazy"></div>
+          <div class="pole__body">
+            <h3>Tech &amp; Digital</h3>
+            <p>Un écosystème dédié aux startups tech, au développement produit et à l'innovation digitale.</p>
+          </div>
+        </div>
+        <div class="pole pole--pink">
+          <div class="pole__media"><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/assets/images/04-studio-podcast-content-creation.png" alt="Media Lab" loading="lazy"></div>
+          <div class="pole__body">
+            <h3>Media Lab</h3>
+            <p>Studio et équipements pour la création de contenu, podcasts et productions vidéo.</p>
+          </div>
+        </div>
+        <div class="pole pole--green">
+          <div class="pole__media"><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/CoChef.png" alt="Food Lab" loading="lazy"></div>
+          <div class="pole__body">
+            <h3>Food Lab</h3>
+            <p>Un espace culinaire pensé pour la convivialité et les rencontres entre créatifs.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -448,6 +439,14 @@
         title="Startup Village Menzah - Carte"
         src="https://maps.google.com/maps?q=Startup%20Village%20Menzah%20Tunis&t=&z=14&ie=UTF8&iwloc=&output=embed"
         loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ===================== CTA — JE REJOINS LA COMMUNAUTÉ ===================== -->
+  <section class="section villageois" id="contact">
+    <div class="container">
+      <h2>Je rejoins la communauté</h2>
+      <a href="#contact" class="btn btn--green">Réserver un espace</a>
     </div>
   </section>
 
@@ -472,19 +471,19 @@
           <ul>
             <li><a href="#">Startup Village</a></li>
             <li><a href="#concept">Concept</a></li>
-            <li><a href="#espaces">Espaces</a></li>
-            <li><a href="#poles">Pôles</a></li>
+            <li><a href="#espace-vie">Espace de vie</a></li>
+            <li><a href="#startups">Startups</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <div>
           <h4>Espaces</h4>
           <ul>
-            <li><a href="#">Bureaux privatifs</a></li>
-            <li><a href="#">Coworking</a></li>
-            <li><a href="#">Salles de réunions</a></li>
-            <li><a href="#">Salle polyvalente</a></li>
-            <li><a href="#">Studio</a></li>
+            <li><a href="#espace-vie">Bureaux privatifs</a></li>
+            <li><a href="#espace-vie">Coworking</a></li>
+            <li><a href="#espace-vie">Salles de réunions</a></li>
+            <li><a href="#espace-vie">Salle polyvalente</a></li>
+            <li><a href="#startups">Studio</a></li>
           </ul>
         </div>
         <div>
