@@ -50,7 +50,7 @@ const STYLES = `
 
 /* INTRO */
 .menzah-page .intro { position:relative; }
-.menzah-page .intro__media { position:relative; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); min-height:560px; background-position:center; background-size:cover; background-repeat:no-repeat; display:flex; align-items:center; justify-content:flex-end; }
+.menzah-page .intro__media { position:relative; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); min-height:560px; background-position:center; background-size:cover; background-repeat:no-repeat; display:flex; align-items:center; justify-content:flex-start; }
 .menzah-page .intro__media::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(11,42,74,.12), rgba(11,42,74,.35)); }
 .menzah-page .intro__card { position:relative; z-index:2; margin:40px; max-width:640px; background:rgba(11,42,74,.92); color:#fff; padding:44px 46px; border-radius:var(--radius); box-shadow:var(--shadow); }
 .menzah-page .intro__card h2 { color:#fff; font-size:clamp(24px,3.2vw,34px); font-weight:700; }
@@ -74,7 +74,7 @@ const STYLES = `
 .menzah-page .gallery-band h2 { color:#fff; font-size:clamp(22px,3.4vw,34px); letter-spacing:.04em; font-weight:700; }
 .menzah-page .gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:34px; }
 .menzah-page .gallery figure { margin:0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); aspect-ratio:16/10; }
-.menzah-page .gallery img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+.menzah-page .gallery img { width:100%; height:100%; object-fit:cover; border-radius:var(--radius); transition:transform .5s ease; }
 .menzah-page .gallery figure:hover img { transform:scale(1.06); }
 
 /* LOGOS */
@@ -88,7 +88,7 @@ const STYLES = `
 
 /* PÔLES */
 .menzah-page .poles { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
-.menzah-page .pole { border-radius:var(--radius); padding:40px 34px; color:#fff; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; gap:16px; transition:transform .2s ease, box-shadow .2s ease; }
+.menzah-page .pole { border-radius:var(--radius); padding:40px 34px; color:#fff; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; gap:16px; text-align:center; align-items:center; justify-content:center; transition:transform .2s ease, box-shadow .2s ease; }
 .menzah-page .pole:hover { transform:translateY(-6px); box-shadow:var(--shadow); }
 .menzah-page .pole h3 { color:#fff; font-size:22px; font-weight:800; letter-spacing:.04em; }
 .menzah-page .pole p { color:rgba(255,255,255,.94); font-size:15px; margin:0; }
