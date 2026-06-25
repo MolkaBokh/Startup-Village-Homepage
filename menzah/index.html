@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup Village — Menzah</title>
+  <meta name="description" content="Startup Village Menzah — Le lieu où innovation, médias et entrepreneuriat se rencontrent." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       Startup Village — Menzah
+       Palette
+         Navy   #0B2A4A
+         Blue   #25AFE0
+         Yellow #F5B339
+         Pink   #E21C57
+         Green  #77B457
+    ============================================================ */
+    :root {
+      --navy:   #0B2A4A;
+      --blue:   #25AFE0;
+      --yellow: #F5B339;
+      --pink:   #E21C57;
+      --green:  #77B457;
+      --ink:    #14233a;
+      --muted:  #5a6b80;
+      --bg:     #ffffff;
+      --soft:   #f5f8fb;
+      --radius: 22px;
+      --radius-sm: 14px;
+      --shadow: 0 18px 50px -20px rgba(11, 42, 74, 0.28);
+      --shadow-sm: 0 10px 30px -16px rgba(11, 42, 74, 0.30);
+      --maxw: 1180px;
+      --font-head: 'Poppins', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { font-family: var(--font-head); color: var(--navy); margin: 0; line-height: 1.15; }
+
+    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 84px 0; }
+    .section--tight { padding: 60px 0; }
+    .section--pb-tight { padding-bottom: 40px; }
+    .section--pt-tight { padding-top: 40px; }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: .02em;
+      padding: 15px 30px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn--blue   { background: var(--blue);   color: #fff; box-shadow: 0 14px 30px -12px rgba(37,175,224,.7); }
+    .btn--yellow { background: var(--yellow); color: var(--navy); box-shadow: 0 14px 30px -12px rgba(245,179,57,.7); }
+    .btn--green  { background: var(--green);  color: #fff; box-shadow: 0 14px 30px -12px rgba(119,180,87,.7); font-size: 17px; padding: 18px 40px; }
+    .btn--ghost  { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.7); }
+    .btn--ghost:hover { background: rgba(255,255,255,.12); }
+
+    /* ===================== HEADER ===================== */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid #eef2f6;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 78px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand__mark { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; width: 34px; }
+    .brand__mark span { display: block; height: 14px; border-radius: 4px; }
+    .brand__mark span:nth-child(1){ background: var(--blue); }
+    .brand__mark span:nth-child(2){ background: var(--yellow); }
+    .brand__mark span:nth-child(3){ background: var(--pink); transform: rotate(0deg); }
+    .brand__mark span:nth-child(4){ background: var(--green); clip-path: polygon(0 0, 100% 50%, 0 100%); border-radius: 2px; }
+    .brand__text { font-family: var(--font-head); font-weight: 800; letter-spacing: .18em; font-size: 14px; color: var(--navy); line-height: 1; }
+    .brand__text small { display: block; font-weight: 600; font-size: 9px; letter-spacing: .42em; color: var(--muted); margin-top: 3px; }
+
+    .menu { display: flex; align-items: center; gap: 30px; }
+    .menu a { font-family: var(--font-head); font-weight: 500; font-size: 15px; color: var(--ink); transition: color .15s; }
+    .menu a:hover { color: var(--blue); }
+    .menu a.active { color: var(--green); font-weight: 600; }
+    .lang { display: flex; align-items: center; gap: 6px; padding-left: 22px; margin-left: 4px; border-left: 1px solid #e3e9ef; font-family: var(--font-head); font-weight: 600; font-size: 14px; color: var(--navy); }
+    .lang .flag { width: 22px; height: 15px; border-radius: 3px; background: linear-gradient(90deg,#0055A4 33%,#fff 33% 66%,#EF4135 66%); display: inline-block; }
+
+    .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .burger span { width: 26px; height: 3px; border-radius: 3px; background: var(--navy); }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      position: relative;
+      min-height: 560px;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero__bg { position: absolute; inset: 0; background-position: center; background-size: cover; background-repeat: no-repeat; transform: scale(1.02); }
+    .hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.42)); }
+    .hero__inner { position: relative; z-index: 2; padding: 90px 24px; max-width: 880px; }
+    .hero h1 { color: #fff; font-size: clamp(34px, 6vw, 66px); font-weight: 800; letter-spacing: .01em; text-shadow: 0 6px 30px rgba(0,0,0,.3); }
+    .hero p { font-size: clamp(16px, 2.4vw, 22px); font-weight: 400; margin: 18px 0 34px; opacity: .96; }
+    .hero__cta { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ===================== INTRO CARD ===================== */
+    .intro { position: relative; }
+    .intro__media {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 540px;
+      background-position: center; background-size: cover; background-repeat: no-repeat;
+      display: flex; align-items: center; justify-content: flex-end;
+    }
+    .intro__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,42,74,.12), rgba(11,42,74,.35)); }
+    .intro__card {
+      position: relative; z-index: 2;
+      margin: 40px;
+      max-width: 620px;
+      background: rgba(11,42,74,.92);
+      color: #fff;
+      padding: 44px 46px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .intro__card h2 { color: #fff; font-size: clamp(24px, 3.2vw, 34px); font-weight: 700; }
+    .intro__card p { color: rgba(255,255,255,.9); font-size: 15.5px; margin: 18px 0 14px; }
+    .intro__card p:last-child { margin-bottom: 0; }
+
+    /* ===================== STATS ===================== */
+    .head-center { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+    .head-center h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 700; }
+    .head-center p { color: var(--muted); font-size: 17px; margin-top: 18px; }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+    .stat {
+      text-align: center;
+      padding: 34px 20px;
+      border-radius: var(--radius);
+      background: var(--soft);
+      border: 1px solid #eef2f6;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .stat:hover { transform: translateY(-6px); box-shadow: var(--shadow-sm); }
+    .stat__icon { width: 54px; height: 54px; margin: 0 auto 18px; color: var(--navy); }
+    .stat__icon svg { width: 100%; height: 100%; stroke: var(--navy); }
+    .stat h3 { font-size: 18px; font-weight: 700; }
+    .stat span { display: block; color: var(--blue); font-weight: 600; font-family: var(--font-head); font-size: 14px; margin-top: 6px; }
+
+    /* ===================== GALLERY ===================== */
+    .gallery-band { background: var(--blue); color: #fff; text-align: center; padding: 30px 0; }
+    .gallery-band h2 { color: #fff; font-size: clamp(22px, 3.4vw, 34px); letter-spacing: .04em; font-weight: 700; }
+
+    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .gallery figure { margin: 0; border-radius: 0; overflow: hidden; box-shadow: var(--shadow-sm); aspect-ratio: 16 / 10; }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .gallery figure:hover img { transform: scale(1.06); }
+    .gallery-caption { color: var(--muted); text-align: center; font-size: 16px; max-width: 640px; margin: 34px auto 0; }
+
+    /* ===================== POLES D'EXPERTISE ===================== */
+    .poles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .pole { background: #fff; border: 1px solid #eef2f6; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease; }
+    .pole:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .pole__media { aspect-ratio: 16 / 10; overflow: hidden; }
+    .pole__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .pole:hover .pole__media img { transform: scale(1.06); }
+    .pole__body { padding: 24px 26px; }
+    .pole__body h3 { font-size: 19px; font-weight: 700; }
+    .pole__body p { color: var(--muted); font-size: 15px; margin: 10px 0 0; }
+    .pole--blue h3  { color: var(--blue); }
+    .pole--pink h3  { color: var(--pink); }
+    .pole--green h3 { color: var(--green); }
+
+    /* ===================== LOGOS ===================== */
+    .logos-wrap { background: var(--soft); }
+    .logos { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: center; }
+    .logos__title h2 { font-size: clamp(26px, 3.4vw, 38px); font-weight: 800; line-height: 1.1; }
+    .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    .marquee__track { display: flex; align-items: center; gap: 56px; width: max-content; animation: scroll 28s linear infinite; }
+    .marquee:hover .marquee__track { animation-play-state: paused; }
+    .marquee__track img { height: 52px; width: auto; object-fit: contain; }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ===================== JOIN / CTA ===================== */
+    .join { text-align: center; background: var(--soft); }
+    .join h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; }
+    .join p.lead { color: var(--muted); font-size: 18px; margin: 14px 0 40px; }
+
+    /* ===================== MAP ===================== */
+    .map { padding: 0 0 60px; }
+    .map__card { max-width: 520px; margin: 0 auto 24px; text-align: center; border: 1px solid #eef2f6; border-radius: var(--radius-sm); padding: 20px 22px; box-shadow: var(--shadow-sm); background: #fff; }
+    .map__card h3 { font-size: 18px; font-weight: 700; }
+    .map__card p { color: var(--muted); margin: 6px 0 0; font-size: 14.5px; }
+    .map iframe { width: 100%; height: 460px; border: 0; display: block; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+
+    /* ===================== FOOTER ===================== */
+    .footer { background: var(--navy); color: rgba(255,255,255,.8); padding: 70px 0 34px; }
+    .footer__grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap: 40px; }
+    .footer .brand__text, .footer .brand__text small { color: #fff; }
+    .footer p { font-size: 14.5px; color: rgba(255,255,255,.7); margin: 16px 0 0; max-width: 320px; }
+    .footer h4 { color: #fff; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px; font-weight: 600; }
+    .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .footer ul a { font-size: 14.5px; color: rgba(255,255,255,.7); transition: color .15s; }
+    .footer ul a:hover { color: var(--blue); }
+    .footer__bottom { margin-top: 50px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13.5px; color: rgba(255,255,255,.55); }
+    .social { display: flex; gap: 12px; margin-top: 18px; }
+    .social a { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,.1); display: grid; place-items: center; transition: background .2s; }
+    .social a:hover { background: var(--blue); }
+    .social svg { width: 18px; height: 18px; fill: #fff; }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 980px) {
+      .menu { display: none; }
+      .burger { display: flex; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .poles { grid-template-columns: 1fr; }
+      .logos { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 56px 0; }
+      .gallery { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      .intro__card { margin: 16px; padding: 32px 26px; }
+      .footer__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="brand__mark"><span></span><span></span><span></span><span></span></span>
+        <span class="brand__text">STARTUP<small>VILLAGE</small></span>
+      </a>
+      <nav class="menu">
+        <a href="#" class="active">Startup Village</a>
+        <a href="#concept">Concept</a>
+        <a href="#espaces">Espaces</a>
+        <a href="#poles">Pôles</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="lang">
+        <span class="flag"></span> FR ▾
+      </div>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero__bg" style="background-image:url('https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/Hero.jpg')"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__inner">
+      <h1>Startup Village Menzah</h1>
+      <p>Le lieu où innovation, médias et entrepreneuriat se rencontrent.</p>
+      <div class="hero__cta">
+        <a href="#contact" class="btn btn--blue">Réserver un espace</a>
+        <a href="#espaces" class="btn btn--ghost">Découvrir nos espaces</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INTRO — LÀ OÙ TOUT A COMMENCÉ ===================== -->
+  <section class="section section--pb-tight" id="concept">
+    <div class="container intro">
+      <div class="intro__media" style="background-image:url('https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/L%C3%A0%20o%C3%B9%20tout%20a%20commenc%C3%A9.jpg')">
+        <div class="intro__card">
+          <h2>Startup Village Menzah — Là où tout a commencé</h2>
+          <p>Ouvert le 20 novembre 2021, Startup Village Menzah occupe un bâtiment historique signé Olivier Clément Cacoub, transformé en un lieu de co-création unique à Tunis.</p>
+          <p>Pensé comme le berceau du concept, cet espace réunit startups, freelances, créateurs et porteurs de projets autour d'une même ambition : innover et grandir ensemble.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <section class="section section--pt-tight" id="espaces">
+    <div class="container">
+      <div class="head-center">
+        <h2>Un espace stratégique pour des usages pratiques</h2>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19v2M18 19v2M7 14h10a2 2 0 0 1 2 2v3H5v-3a2 2 0 0 1 2-2ZM9 14V8a3 3 0 0 1 6 0v6M9 8H7a2 2 0 0 0-2 2v2"/></svg></div>
+          <h3>17 bureaux privatifs</h3>
+          <span>+120 positions</span>
+        </div>
+        <div class="stat">
+          <div class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <h3>2 espaces coworking</h3>
+          <span>+90 positions</span>
+        </div>
+        <div class="stat">
+          <div class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a3 3 0 1 0-2.5-4.5M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM2 20v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1M16 15a4 4 0 0 1 4 4v1"/></svg></div>
+          <h3>4 salles de réunions</h3>
+          <span>+40 positions</span>
+        </div>
+        <div class="stat">
+          <div class="stat__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 16l3-4 3 2 4-6"/></svg></div>
+          <h3>1 salle polyvalente</h3>
+          <span>+70 positions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <div class="container">
+    <div class="gallery-band">
+      <h2>DÉCOUVREZ NOS ESPACES</h2>
+    </div>
+  </div>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="gallery">
+        <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/1.jpg" alt="Espace 1" loading="lazy"></figure>
+        <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/2.jpg" alt="Espace 2" loading="lazy"></figure>
+        <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/3.png" alt="Espace 3" loading="lazy"></figure>
+        <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/4.png" alt="Espace 4" loading="lazy"></figure>
+        <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/5.jpg" alt="Espace 5" loading="lazy"></figure>
+        <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/6.png" alt="Espace 6" loading="lazy"></figure>
+        <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/7.jpg" alt="Espace 7" loading="lazy"></figure>
+        <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/8.jpg" alt="Espace 8" loading="lazy"></figure>
+        <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/9.jpg" alt="Espace 9" loading="lazy"></figure>
+        <figure><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/10.png" alt="Espace 10" loading="lazy"></figure>
+      </div>
+      <p class="gallery-caption">Bureaux, salles de réunion, terrasses et studio : un site pensé pour tous vos usages.</p>
+    </div>
+  </section>
+
+  <!-- ===================== PÔLES D'EXPERTISE ===================== -->
+  <section class="section" id="poles">
+    <div class="container">
+      <div class="head-center">
+        <h2>Nos pôles d'expertise</h2>
+      </div>
+      <div class="poles">
+        <div class="pole pole--blue">
+          <div class="pole__media"><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/assets/images/02-coworking-cothinking-space.jpg" alt="Tech &amp; Digital" loading="lazy"></div>
+          <div class="pole__body">
+            <h3>Tech &amp; Digital</h3>
+            <p>Un écosystème dédié aux startups tech, au développement produit et à l'innovation digitale.</p>
+          </div>
+        </div>
+        <div class="pole pole--pink">
+          <div class="pole__media"><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/assets/images/04-studio-podcast-content-creation.png" alt="Media Lab" loading="lazy"></div>
+          <div class="pole__body">
+            <h3>Media Lab</h3>
+            <p>Studio et équipements pour la création de contenu, podcasts et productions vidéo.</p>
+          </div>
+        </div>
+        <div class="pole pole--green">
+          <div class="pole__media"><img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/CoChef.png" alt="Food Lab" loading="lazy"></div>
+          <div class="pole__body">
+            <h3>Food Lab</h3>
+            <p>Un espace culinaire pensé pour la convivialité et les rencontres entre créatifs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOGOS ===================== -->
+  <section class="section section--tight logos-wrap">
+    <div class="container logos">
+      <div class="logos__title">
+        <h2>Ils y sont déjà</h2>
+      </div>
+      <div class="marquee">
+        <div class="marquee__track">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-1.png" alt="Partenaire 1">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-2.png" alt="Partenaire 2">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-3.png" alt="Partenaire 3">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-4.png" alt="Partenaire 4">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-5.png" alt="Partenaire 5">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-6.png" alt="Partenaire 6">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-7.png" alt="Partenaire 7">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-8.png" alt="Partenaire 8">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-9.png" alt="Partenaire 9">
+          <!-- duplicate for seamless loop -->
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-1.png" alt="">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-2.png" alt="">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-3.png" alt="">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-4.png" alt="">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-5.png" alt="">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-6.png" alt="">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-7.png" alt="">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-8.png" alt="">
+          <img src="https://raw.githubusercontent.com/MolkaBokh/Startup-Village-Homepage/6603e65e7028b5852ff8d64628631c74b10bb8f4/logo-9.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== JOIN / CTA ===================== -->
+  <section class="section join" id="contact">
+    <div class="container">
+      <h2>Je rejoins la communauté</h2>
+      <p class="lead">Le lieu où innovation, médias et entrepreneuriat se rencontrent.</p>
+      <a href="#contact" class="btn btn--green">Réserver un espace</a>
+    </div>
+  </section>
+
+  <!-- ===================== MAP ===================== -->
+  <section class="map section--tight">
+    <div class="container">
+      <div class="map__card">
+        <h3>Startup Village Menzah</h3>
+        <p>Menzah 1, Tunis, Tunisie</p>
+      </div>
+      <iframe
+        title="Startup Village Menzah - Carte"
+        src="https://maps.google.com/maps?q=Startup%20Village%20Menzah%20Tunis&t=&z=14&ie=UTF8&iwloc=&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="#">
+            <span class="brand__mark"><span></span><span></span><span></span><span></span></span>
+            <span class="brand__text">STARTUP<small>VILLAGE</small></span>
+          </a>
+          <p>Startup Village Menzah — le lieu où innovation, médias et entrepreneuriat se rencontrent, au cœur de Tunis.</p>
+          <div class="social">
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13 22v-8h3l1-4h-4V8c0-1.1.3-2 2-2h2V2.1C18.5 2 17.4 2 16.2 2 13.5 2 11.5 3.7 11.5 6.7V10H8v4h3.5v8H13Z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.5-.1 4.8c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.1 15.5 2.1 15.2 2.1 12s0-3.5.1-4.8C2.3 4 3.8 2.4 7.1 2.3 8.4 2.2 8.8 2.2 12 2.2Zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4Zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3Zm6.8-11.1a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5Z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.9 8.2H3.6V21h3.3V8.2ZM5.2 3.1A1.9 1.9 0 1 0 5.2 7a1.9 1.9 0 0 0 0-3.9ZM21 21h-3.3v-6.2c0-1.5 0-3.4-2-3.4s-2.4 1.6-2.4 3.3V21H9.9V8.2h3.2v1.7h.1a3.5 3.5 0 0 1 3.2-1.7c3.4 0 4 2.2 4 5.1V21Z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#">Startup Village</a></li>
+            <li><a href="#concept">Concept</a></li>
+            <li><a href="#espaces">Espaces</a></li>
+            <li><a href="#poles">Pôles</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Espaces</h4>
+          <ul>
+            <li><a href="#">Bureaux privatifs</a></li>
+            <li><a href="#">Coworking</a></li>
+            <li><a href="#">Salles de réunions</a></li>
+            <li><a href="#">Salle polyvalente</a></li>
+            <li><a href="#">Studio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://maps.google.com/maps?q=Startup+Village+Menzah+Tunis" target="_blank" rel="noopener">Menzah 1, Tunis, Tunisie</a></li>
+            <li><a href="#">contact@startupvillage.tn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Startup Village Menzah. Tous droits réservés.</span>
+        <span>Conçu avec soin — Startup Village</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle (simple)
+    document.querySelector('.burger').addEventListener('click', function () {
+      const menu = document.querySelector('.menu');
+      const open = menu.style.display === 'flex';
+      menu.style.display = open ? 'none' : 'flex';
+      menu.style.flexDirection = 'column';
+      menu.style.position = 'absolute';
+      menu.style.top = '78px';
+      menu.style.left = '0';
+      menu.style.right = '0';
+      menu.style.background = '#fff';
+      menu.style.padding = '20px 24px';
+      menu.style.gap = '16px';
+      menu.style.boxShadow = '0 18px 40px -20px rgba(11,42,74,.3)';
+    });
+  </script>
+</body>
+</html>
